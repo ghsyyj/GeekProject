@@ -51,6 +51,7 @@ public class MyClassLoader extends ClassLoader {
         Object instance = clazz.getDeclaredConstructor().newInstance();
         // 调用实例方法
         Method method = clazz.getMethod(methodName);
+
         method.invoke(instance);
 	}
 
