@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="autowiredBean" class="geek.week5.CustomizeAutowired" autowire="byType">
+    </bean>
+    <!-- XML byname 装配 -->
+<!--    <bean id="student" class="geek.week5.Student" autowire="byName" >-->
+<!--        <property name="name" value="tom"></property>-->
+<!--        <property name="age" value="12"></property>-->
+<!--    </bean>-->
+    <!-- bytype 装配 -->
+<!--    <bean id="student1" class="geek.week5.Student" autowire="byType">-->
+<!--        <property name="name" value="tom"></property>-->
+<!--        <property name="age" value="12"></property>-->
+<!--    </bean>-->
+<!--    <bean id="student2" class="geek.week5.Student" autowire="byType">-->
+<!--        <property name="name" value="jimmy"></property>-->
+<!--        <property name="age" value="13"></property>-->
+<!--    </bean>-->
+
+    <!-- by constructor -->
+    <bean id="customer" class="geek.week5.CustomizeAutowired">
+        <constructor-arg>
+            <ref bean="student3"/>
+        </constructor-arg>
+    </bean>
+    <bean id="student3" class="geek.week5.Student" autowire="byType">
+        <property name="name" value="jimmy"></property>
+        <property name="age" value="13"></property>
+    </bean>
+</beans>
